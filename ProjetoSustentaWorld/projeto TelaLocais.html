@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais de Coleta - Serra ES</title>
+    <style>
+        /* Estilos para o corpo da página e contêiner do mapa */
+        body {
+            color: #005458;
+            background-color: #c4f6ff;
+            font-family: cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #map-container {
+            width: 400px;
+            height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background-color: #fff;
+            padding: 10px;
+            position: relative;
+        }
+        #map {
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        /* Adiciona um botão para selecionar ponto de coleta */
+        #select-point-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #005458;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: cursive;
+        }
+
+button:hover{
+        background-color: #09232b;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="map-container">
+        <h2>Locais de coleta mais perto de você</h2>
+        <div id="map"></div>
+        <button id="select-point-btn">Selecionar Ponto de Coleta</button>
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-b6yULVgDdwLlg15UrLcFDDQomm5riQw&callback=initMap"async defer></script>
+    <!-- Carregando a API do Google Maps -->
+   
+    <script>
+        // Inicializando o mapa centrado em Serra, ES
+        function initMap() {
+            var serraES = {lat: -20.1211, lng: -40.3078}; // Coordenadas de Serra, ES
+            var map = new google.maps.Map(document.getElementById('map'), {                                                                                                                                         
+                zoom: 12,
+                center: serraES
+            });
+
+            // Adicionando um marcador para demonstrar
+            var marker = new google.maps.Marker({
+                position: serraES,
+                map: map,
+                title: 'Local de Coleta'
+            });
+
+            // Evento de clique no mapa para selecionar ponto de coleta
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng, map);
+            });
+        }
+
+        function placeMarker(location, map) {
+            // Adiciona um marcador no local clicado
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+
+            // Adiciona uma mensagem informando o local escolhido
+            alert('Ponto de coleta escolhido nas coordenadas: ' + location.lat() + ', ' + location.lng());
+        }
+    </script>
+</body>
+</html>
