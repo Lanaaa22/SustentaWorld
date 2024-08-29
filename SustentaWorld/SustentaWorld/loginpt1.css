@@ -1,0 +1,98 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c4f6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+a{
+    padding:0;
+    margin:0;
+    font-family: cursive;
+    }
+    
+  
+ img{
+    
+   
+  
+   
+    width: 100px ;
+   
+   
+
+}
+
+.product img{width:100px;}
+
+h1{
+font-family: cursive;
+text-align: start;
+color: #005475;
+}
+h3{
+    font-family: cursive;
+    text-align: start;
+    color: #005475;
+}
+
+
+
+.login-container {
+    background-color: #c4f6ff;
+  margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+   margin-left: 10px;
+    padding:1%;
+    scroll-margin-left:70px;
+ 
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0e4c81;
+    font-family: cursive;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    display: inline-block; /* Faz o link se comportar como um bloco de nível inline */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    background-color: #005458;
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    border-radius: 15px; /* Cantos arredondados */
+    border: 1px solid #005458; /* Borda do botão */
+    transition: background-color 0.3s, color 0.3s; /* Efeito de transição */
+  }
+  
+  .button:hover {
+    background-color: #09232b;
+    color: #fff; /* Cor do texto quando o mouse passa sobre o botão */
+  }
+
